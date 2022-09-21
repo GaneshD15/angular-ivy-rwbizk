@@ -1,6 +1,6 @@
 export class Form {
-  sId: number;
-  sName: string;
+  id: number;
+  name: string;
   email: string;
   dob: string;
   gender: string;

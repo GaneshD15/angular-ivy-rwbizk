@@ -1,29 +1,42 @@
-<p>
-  {{ forms.length }}
-  {{ model | json }}
-</p>
-<form name="form" (ngSubmit)="addUser()" novalidate>
-  <input type="text" id="name" name="name" [(ngModel)]="model.name" />
-  <input type="text" id="email" name="email" [(ngModel)]="model.email" />
-  <input type="joinfield" id="dob" name="dob" [(ngModel)]="model.dob" />
-  <input type="submit" #btnId class="btn btn-success" value="Save" />
-</form>
-<table class="table table-striped table-hover">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>name</th>
-      <th>email</th>
-      <th>dob</th>
-    </tr>
-  </thead>
-  <!-- tbody -->
-  <tr *ngFor="let book of forms">
-    <td>{{ book.id }}</td>
-    <td>{{ book.name }}</td>
-    <td>{{ book.email }}</td>
-    <td>{{ book.dob }}</td>
-    <td><button (click)="editBook(book.id)">Edit</button></td>
-    <td><button (click)="removeBook(book.id)">Delete</button></td>
-  </tr>
-</table>
+<form>
+  <div class="form-group">
+      <label for="firstName">Name:&nbsp;</label>
+      <input type="text" 
+      id="firstName"
+      placeholder="Name">
+  </div> <br>
+  <div class="form-group">
+      <label for="email">Email:&nbsp;</label>
+      <input 
+      type="text" 
+      id="email" 
+      placeholder="Email">
+   </div> <br>
+  <div class="form-group">
+      <label for="password">Password:&nbsp;</label>
+      <input 
+          type="password"
+          id="password" 
+          placeholder="Password">
+  </div> <br>
+  <div class="form-group">
+      <label for="phone">Mobile:&nbsp;</label>
+      <input 
+      type="text"  
+      id="phone" 
+      ngModel name="phone"
+      #phone="ngModel"
+      placeholder="Mobile">
+  </div> <br>
+  Qualification: {{myVar.value}}
+      <select ngModel name="mychoice" #myChoice="ngModel">
+          <option>SSLC</option>
+          <option>HSC</option>
+          <option>Diploma</option>
+          <option>UG</option>
+          <option>PG</option>
+      </select>
+      <p>Languages Known: {{myVar.value}}
+      <input id="myVar" type="checkbox" ngModel name="myVar" #myVar="ngModel" value="tamil">Tamil</p>
+  </form>
+  <p>{{ students }}</p>
